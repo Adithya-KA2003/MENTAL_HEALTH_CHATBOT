@@ -1,0 +1,16 @@
+version: "3.1"
+
+stories:
+- story: user takes mental health assessment
+  steps:
+  - intent: greet
+  - action: action_detect_language
+  - action: utter_greet
+  - intent: start_assessment
+  - action: action_mental_health_assessment
+  - intent: provide_response
+  - action: action_record_response
+  - action: action_mental_health_assessment
+  - intent: goodbye
+  - action: action_detect_language
+  - action: utter_goodbye

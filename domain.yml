@@ -1,0 +1,91 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - start_assessment
+  - provide_response
+  - ask_who_you_are
+  - ask_motivation
+
+slots:
+  user_language:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        intent: greet
+  
+  assessment_responses:
+    type: list
+    influence_conversation: false
+    initial_value: []
+    mappings:
+      - type: custom  # Custom mapping for this slot
+
+  current_question_index:
+    type: any
+    influence_conversation: false
+    initial_value: 0
+    mappings:
+      - type: custom  # Custom mapping for this slot
+
+  score:
+    type: any
+    influence_conversation: false
+    initial_value: 0
+    mappings:
+      - type: custom  # Custom mapping for score-based responses
+
+actions:
+  - action_greet_user
+  - action_goodbye
+  - action_mental_health_assessment
+  - action_record_response
+  - action_provide_score_based_response  # Added action to be used in the flow
+  - action_detect_language
+
+responses:
+  utter_greet:
+    - condition:
+        - type: slot
+          name: user_language
+          value: "ml"
+      text: "ഹലോ! നിങ്ങൾ മാനസികാരോഗ്യ വിലയിരുത്തൽ എടുക്കുമോ?"
+    - condition:
+        - type: slot
+          name: user_language
+          value: "kn"
+      text: "ಹಲೋ! ನೀವು ಮಾನಸಿಕ ಆರೋಗ್ಯ ಮೌಲ್ಯಮಾಪನವನ್ನು ತೆಗೆದುಕೊಳ್ಳುತ್ತೀರಾ?"
+    - condition:
+        - type: slot
+          name: user_language
+          value: "ta"
+      text: "வணக்கம்! நீங்கள் மனநலம் மதிப்பீட்டை எடுத்துக்கொள்வீர்களா?"
+    - condition:
+        - type: slot
+          name: user_language
+          value: "en"
+      text: "Hello! Would you like to take a mental health assessment?"
+
+  utter_goodbye:
+    - condition:
+        - type: slot
+          name: user_language
+          value: "ml"
+      text: "വിട! നിങ്ങളെ തന്നെയും കാത്തുസൂക്ഷിക്കുക."
+    - condition:
+        - type: slot
+          name: user_language
+          value: "kn"
+      text: "ಹೋಗಿ! ನಿಮ್ಮನ್ನು ನೀವು ಗಮನಿಸಿ."
+    - condition:
+        - type: slot
+          name: user_language
+          value: "ta"
+      text: "போங்கள்! உங்களை கவனிக்கவும்."
+    - text: "Goodbye! Take care of yourself."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

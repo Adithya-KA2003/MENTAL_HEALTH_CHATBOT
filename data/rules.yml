@@ -1,0 +1,142 @@
+# version: "3.1"
+
+# rules:
+
+# - rule: Say goodbye anytime the user says goodbye
+#   steps:
+#   - intent: goodbye
+#   - action: utter_goodbye
+
+# - rule: Say 'I am a bot' anytime the user challenges
+#   steps:
+#   - intent: bot_challenge
+#   - action: utter_iamabot
+
+
+
+
+
+# version: "3.1"
+
+# rules:
+#   - rule: Respond to greet
+#     steps:
+#       - intent: greet
+#       - action: utter_greet
+
+#   - rule: Respond to goodbye
+#     steps:
+#       - intent: goodbye
+#       - action: utter_goodbye
+
+#   - rule: Activate stress assessment form
+#     steps:
+#       - intent: request_stress_assessment
+#       - action: stress_form
+#       - active_loop: stress_form
+
+#   - rule: Submit stress form and predict mental health score
+#     condition:
+#       - active_loop: stress_form
+#     steps:
+#       - action: action_stress_prediction
+#       - action: utter_goodbye
+
+# version: "3.1"
+
+# rules:
+# - rule: Greet user
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+
+# - rule: Say goodbye
+#   steps:
+#     - intent: goodbye
+#     - action: utter_goodbye
+
+# - rule: Activate stress assessment form
+#   steps:
+#     - intent: request_stress_assessment
+#     - action: stress_form
+#     - active_loop: stress_form
+
+# - rule: Submit stress form and process results
+#   condition:
+#     - active_loop: stress_form
+#   steps:
+#     - action: stress_form
+#     - active_loop: null
+#     - action: action_stress_prediction
+
+
+
+
+# version: "3.0"
+
+# rules:
+#   - rule: Request stress level
+#     steps:
+#       - intent: greet
+#       - action: utter_ask_stress_level
+
+
+#   - rule: Action after collecting all data
+#     steps:
+#       - intent: provide_answer
+#       - action: action_calculate_mental_health_score
+
+
+# version: "3.1"
+# rules:
+#   - rule: Ask for stress level
+#     steps:
+#       - intent: stress_indication
+#       - action: utter_ask_stress_level
+
+#   - rule: Provide response based on stress level
+#     steps:
+#       - intent: provide_stress_level
+#       - action: action_stress_level_response
+
+#   - rule: Low stress level response
+#     steps:
+#       - intent: low_stress_level
+#       - action: utter_low_stress_response
+
+#   - rule: Medium stress level response
+#     steps:
+#       - intent: medium_stress_level
+#       - action: utter_medium_stress_response
+
+#   - rule: High stress level response
+#     steps:
+#       - intent: high_stress_level
+#       - action: utter_high_stress_response
+# rules.yml
+
+version: "3.1"
+
+rules:
+- rule: Detect User Language
+  steps:
+    - intent: greet
+    - action: action_detect_language
+    - action: utter_greet
+
+- rule: Say goodbye to the user
+  steps:
+    - intent: goodbye
+    - action: action_detect_language
+    - action: utter_goodbye
+
+- rule: Start mental health assessment
+  steps:
+    - intent: start_assessment
+    - action: action_mental_health_assessment
+
+- rule: Record response for mental health assessment
+  steps:
+    - intent: provide_response
+    - action: action_record_response
+    - action: action_mental_health_assessment

@@ -1,0 +1,46 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "back": 0,
+        "high_stress_level": 1,
+        "low_stress_level": 2,
+        "medium_stress_level": 3,
+        "nlu_fallback": 4,
+        "out_of_scope": 5,
+        "provide_stress_level": 6,
+        "restart": 7,
+        "session_start": 8,
+        "stress_indication": 9
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_stress_level_response": 13,
+        "utter_ask_stress_level": 14,
+        "utter_high_stress_response": 15,
+        "utter_low_stress_response": 16,
+        "utter_medium_stress_response": 17
+      },
+      "entities": {},
+      "slots": {},
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": null
+}

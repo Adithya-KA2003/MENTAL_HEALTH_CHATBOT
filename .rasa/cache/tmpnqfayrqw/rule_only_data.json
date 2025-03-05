@@ -1,0 +1,6 @@
+{
+  "rule_only_slots": [
+    "user_language"
+  ],
+  "rule_only_loops": []
+}

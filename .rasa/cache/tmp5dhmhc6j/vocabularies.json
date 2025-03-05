@@ -1,0 +1,47 @@
+{
+  "text": {
+    "i": 6,
+    "want": 14,
+    "to": 13,
+    "take": 10,
+    "the": 12,
+    "assessment": 1,
+    "start": 8,
+    "mental": 7,
+    "health": 5,
+    "test": 11,
+    "begin": 2,
+    "__number__": 0,
+    "stop": 9,
+    "cancel": 3,
+    "end": 4
+  },
+  "intent": {
+    "start_assessment": 3,
+    "provide_response": 2,
+    "stop_assessment": 4,
+    "bot_challenge": 0,
+    "goodbye": 1
+  },
+  "response": null,
+  "action_name": {
+    "action_listen": 6,
+    "action_restart": 9,
+    "action_session_start": 11,
+    "action_default_fallback": 4,
+    "action_deactivate_loop": 1,
+    "action_revert_fallback_events": 10,
+    "action_default_ask_affirmation": 2,
+    "action_default_ask_rephrase": 3,
+    "action_two_stage_fallback": 12,
+    "action_unlikely_intent": 13,
+    "action_back": 0,
+    "action_extract_slots": 5,
+    "action_mental_health_assessment": 7,
+    "action_record_response": 8,
+    "utter_goodbye": 14,
+    "utter_iamabot": 15
+  },
+  "action_text": null,
+  "intent_response_key": null
+}
