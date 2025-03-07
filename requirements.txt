@@ -27,7 +27,6 @@ colorama==0.4.6
 colorclass==2.2.2
 coloredlogs==15.0.1
 colorhash==1.2.1
-confluent-kafka==2.8.0
 cryptography==44.0.0
 cycler==0.12.1
 dask==2022.10.2
